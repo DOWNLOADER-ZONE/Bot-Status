@@ -1,0 +1,34 @@
+{
+  "bots": {
+    "bot1": {
+      "host": "Heroku",
+      "bot_uname": "@dzoneml1bot"
+    },
+    "bot2": {
+      "host": "Heroku",
+      "bot_uname": "@dzoneml2bot"
+    },
+    "bot3": {
+      "host": "Heroku",
+      "bot_uname": "@dzonensfwbot"
+    },
+    "bot4": {
+      "host": "Koyeb",
+      "bot_uname": "@dzonemoviefilter1bot"
+    },
+    "bot5": {
+      "host": "Heroku",
+      "bot_uname": "@dzonefiletolink1bot"
+    },
+    "bot6": {
+      "host": "Heroku",
+      "bot_uname": "@dzonefiletolink2bot"
+    }
+  },
+  "channels": {
+    "chat1": {
+      "chat_id": "-1002602465235",
+      "message_id": "2"
+    }
+  }
+}

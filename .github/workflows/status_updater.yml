@@ -1,0 +1,37 @@
+name: Bot Status Check
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Initialize Checkout
+        uses: actions/checkout@v4
+      - name: SetUp Python3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Clone the Repository
+        uses: actions/checkout@master
+        with:
+          repository: ${{ secrets.REPO_NAME }}
+      - name: Install Dependencies
+        run: |
+          pip install -q -U pip uv
+          uv pip install --system requests python-dotenv pytz pyrofork tgcrypto
+      - name: Run the UserClient Script
+        run: |
+          python3 main.py
+        env:
+          API_ID: ${{ secrets.API_ID }}
+          API_HASH: ${{ secrets.API_HASH }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          MEDIA: ${{ secrets.MEDIA }}
+          MSG_BUTTONS: ${{ secrets.MSG_BUTTONS }}
+          PYRO_SESSION: ${{ secrets.PYRO_SESSION }}
+          CONFIG_JSON_URL: ${{ secrets.CONFIG_JSON_URL }}
+          CONFIG_ENV_URL: ${{ secrets.CONFIG_ENV_URL }}
