@@ -63,8 +63,8 @@ except Exception as e:
     log.error("Error: config.json is not valid")
     exit(1)
 
-HEADER_MSG = getenv("HEADER_MSG", "🔥 **Mirror Beast Gateways!**")
-FOOTER_MSG = getenv("FOOTER_MSG", "— Powered by Beast")
+HEADER_MSG = getenv("HEADER_MSG", "🔥 **Downloader Zone Gateway!**")
+FOOTER_MSG = getenv("FOOTER_MSG", "— Powered by Downloader Zone")
 MSG_BUTTONS = getenv("MSG_BUTTONS")
 TIME_ZONE = getenv("TIME_ZONE", "Asia/Kolkata")
 
